@@ -49,6 +49,10 @@ h1 {
 
 /* IMAGE SLIDER */
 
+.image-slider-title {
+    margin-top: 200px;
+}
+
 .image-slider {
     display: flex;
 }

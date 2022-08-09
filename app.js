@@ -37,6 +37,7 @@ const leftArrow = document.getElementById("left-arrow")
 const rightArrow = document.getElementById("right-arrow")
 
 leftArrow.addEventListener("click", leftCarrousel)
+rightArrow.addEventListener("click", rightCarrousel)
 
 function leftCarrousel() {
     const imgContainer = document.querySelector(".image-container")
@@ -46,11 +47,27 @@ function leftCarrousel() {
         deactivateButton(document.querySelector(`button[name="0"]`))
         activateButton(document.querySelector(`button[name="800"]`))
     } else { 
-        let value = style.right.match(/(\d+)/)
-        deactivateButton(document.querySelector(`button[name="${value[0]}"]`))
-        value[0] -= 200
-        activateButton(document.querySelector(`button[name="${value[0]}"]`))
-        imgContainer.style.right= ` ${value[0]}px`;
+        let value = parseInt(style.right.match(/(\d+)/)[0])
+        deactivateButton(document.querySelector(`button[name="${value}"]`))
+        value -= 200
+        activateButton(document.querySelector(`button[name="${value}"]`))
+        imgContainer.style.right= ` ${value}px`;
+    }
+}
+
+function rightCarrousel() {
+    const imgContainer = document.querySelector(".image-container")
+    const style = getComputedStyle(imgContainer)
+    if (style.right === "800px") {
+        imgContainer.style.right= "0px";
+        deactivateButton(document.querySelector(`button[name="800"]`))
+        activateButton(document.querySelector(`button[name="0"]`))
+    } else { 
+        let value = parseInt(style.right.match(/(\d+)/)[0])
+        deactivateButton(document.querySelector(`button[name="${value}"]`))
+        value += 200
+        activateButton(document.querySelector(`button[name="${value}"]`))
+        imgContainer.style.right= ` ${value}px`;
     }
 }
 
