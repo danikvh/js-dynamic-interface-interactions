@@ -45,42 +45,50 @@ dotButtons.forEach((button) => button.addEventListener("click", dotClick))
 function leftCarrousel() {
     const imgContainer = document.querySelector(".image-container")
     const style = getComputedStyle(imgContainer)
+    imgContainer.classList.remove("image-container-animation")
     if (style.right === "0px") {
-        imgContainer.style.right= "800px";
         deactivateButton(document.querySelector(`button[name="0"]`))
         activateButton(document.querySelector(`button[name="800"]`))
+        imgContainer.style.right= "800px";
+        imgContainer.classList.add("image-container-animation")
     } else { 
         let value = parseInt(style.right.match(/(\d+)/)[0])
         deactivateButton(document.querySelector(`button[name="${value}"]`))
         value -= 200
         activateButton(document.querySelector(`button[name="${value}"]`))
         imgContainer.style.right= ` ${value}px`;
+        imgContainer.classList.add("image-container-animation")
     }
 }
 
 function rightCarrousel() {
     const imgContainer = document.querySelector(".image-container")
     const style = getComputedStyle(imgContainer)
+    imgContainer.classList.remove("image-container-animation")
     if (style.right === "800px") {
-        imgContainer.style.right = "0px";
         deactivateButton(document.querySelector(`button[name="800"]`))
         activateButton(document.querySelector(`button[name="0"]`))
+        imgContainer.style.right = "0px";
+        imgContainer.classList.add("image-container-animation")
     } else { 
         let value = parseInt(style.right.match(/(\d+)/)[0])
         deactivateButton(document.querySelector(`button[name="${value}"]`))
         value += 200
         activateButton(document.querySelector(`button[name="${value}"]`))
-        imgContainer.style.right = ` ${value}px`;
+        imgContainer.style.right = ` ${value}px`
+        imgContainer.classList.add("image-container-animation")
     }
 }
 
 function dotClick(event) {
+    const imgContainer = document.querySelector(".image-container")
+    imgContainer.classList.remove("image-container-animation")
     if (event.currentTarget.classList.contains("filter-active")) return
     else {
         deactivateButton(document.querySelector(`button[class="filter-active"]`))
         activateButton(event.currentTarget)
-        const imgContainer = document.querySelector(".image-container")
         imgContainer.style.right = ` ${event.currentTarget.name}px`
+        imgContainer.classList.add("image-container-animation")
     }
 }
 

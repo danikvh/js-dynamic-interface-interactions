@@ -105,6 +105,18 @@ h1 {
     position: relative;
     right: 0px;
     z-index: -1;
+    transition: right 0s;
+    transition-delay: 0.5s;
+}
+
+.image-container-animation {
+    animation: fade 1s linear;
+}
+
+@keyframes fade {
+  0% { opacity: 1 }
+  50% { opacity: 0}
+  100% { opacity: 1 }
 }
 
 .image-slider-buttons {
