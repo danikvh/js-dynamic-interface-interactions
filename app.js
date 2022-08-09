@@ -4,8 +4,10 @@ function showDropDown(event) {
 
     event.classList.add("drop-down-main-selected")
     const option = event.getAttribute("option")
+    
     const menu = document.getElementById(`drop-down-options-${option}`)
     menu.classList.add("drop-down-option-show");
+
     const options = document.querySelectorAll(`#drop-down-options-${option} > .drop-down-option`)
     options.forEach((option) => option.classList.add("drop-down-animation"))
 }
@@ -100,7 +102,6 @@ function dotClick(event) {
 function activateButton(button) {
     button.classList.remove("filter-inactive")
     button.classList.add("filter-active")    
-
 }
 
 function deactivateButton(button) {

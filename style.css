@@ -43,7 +43,7 @@ h1 {
 }
 
 .drop-down-animation {
-    animation: drop-down 0.35s linear;
+    animation: drop-down 0.15s linear;
 }
 
 @keyframes drop-down {
@@ -128,7 +128,7 @@ h1 {
 
 @keyframes fade {
   0% { opacity: 1 }
-  50% { opacity: 0}
+  50% { opacity: 0 }
   100% { opacity: 1 }
 }
 
