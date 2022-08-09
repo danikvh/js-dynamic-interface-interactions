@@ -3,6 +3,10 @@ body {
     padding: 0px;
 }
 
+h1 {
+    margin-left: 20px;
+}
+
 /* DROP DOWN MENUS */
 
 .nav-bar {
@@ -45,14 +49,27 @@ body {
 
 /* IMAGE SLIDER */
 
+.image-slider {
+    display: flex;
+}
+
 .image-container {
     display: flex;
     width: 1000px;
+    position: relative;
+    right: 200px;
+    z-index: -1;
+}
+
+.image-container img {
+    z-index: -1;
 }
 
 .image-frame {
+    margin-left: 100px;
     width: 200px;
     height: 200px;
     background-color: white;
     border: 10px solid black;
+    z-index: 1;
 }
