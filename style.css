@@ -51,19 +51,27 @@ h1 {
 
 .image-slider {
     display: flex;
-    border: 1px solid black;
 }
 
-#left-arrow-slider {
-
+#left-arrow-slider-container {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-self: flex-start;
+    border: 10px solid black;
 }
 
-#right-arrow-slider {
+#right-arrow-slider-container {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    border: 10px solid black;
+}
 
+#left-arrow {
 }
 
 .image-frame {
-    margin-left: 100px;
     width: 200px;
     height: 200px;
     border: 10px solid black;
@@ -75,4 +83,15 @@ h1 {
     position: relative;
     right: 200px;
     z-index: -1;
+}
+
+.image-slider-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.image-slider-buttons button {
+    background-color: transparent;
+    /*border: transparent;*/
 }
