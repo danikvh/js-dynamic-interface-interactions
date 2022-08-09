@@ -20,11 +20,8 @@ body {
     font-size: 20px;
 }
 
-.drop-down-main:hover, .drop-down-main:focus, .drop-down-option:hover {
-    background-color: hsl(0, 61%, 51%);
-}
-
-.drop-down-main-selected {
+.drop-down-main:hover, .drop-down-main-selected, 
+.drop-down-option:hover {
     background-color: hsl(0, 61%, 51%);
 }
 
@@ -39,6 +36,6 @@ body {
     height: 30px;
 }
 
-.show {
+.drop-down-option-show {
     visibility: visible;
 }

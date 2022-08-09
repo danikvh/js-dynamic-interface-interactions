@@ -1,19 +1,32 @@
 //DROP DOWN MENU
 function showDropDown(event) {
+    checkDropDownMenus()
+
+    event.classList.add("drop-down-main-selected")
     const option = event.getAttribute("option")
     const menu = document.getElementById(`drop-down-options-${option}`)
-    menu.classList.toggle("show");
+    menu.classList.add("drop-down-option-show");
+}
+
+function checkDropDownMenus() {
+    const dropButtons = document.querySelectorAll(".drop-down-main")
+    dropButtons.forEach(function(button) {
+        if (button.classList.contains("drop-down-main-selected")) {
+            button.classList.remove("drop-down-main-selected")
+        }
+    })
+
+    const menus = document.querySelectorAll(".drop-down-options")
+    menus.forEach(function(menu) {
+        if (menu.classList.contains("drop-down-option-show")) {
+            menu.classList.remove("drop-down-option-show")
+        }
+    })
 }
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-    if (!event.target.matches('.drop-down-main')) {
-      const dropdowns = document.getElementsByClassName("drop-down-options");
-      for (let i = 0; i < dropdowns.length; i++) {
-        let openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
+    if (!event.target.matches('.drop-down-main-selected')) {
+        checkDropDownMenus()
     }
   }
