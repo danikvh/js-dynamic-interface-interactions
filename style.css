@@ -66,6 +66,7 @@ h1 {
 .arrow-slider-container button {
     width: 40px;
     height: 40px;
+    border-radius: 3px;
 }
 
 .arrow-slider-container button:hover {
@@ -113,7 +114,7 @@ h1 {
 }
 
 .image-slider-buttons .filter-inactive:hover {
-    filter: contrast(20%);
+    filter: contrast(25%);
 }
 
 .filter-active {

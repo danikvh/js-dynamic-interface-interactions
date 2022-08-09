@@ -35,9 +35,12 @@ window.onclick = function(event) {
 
 const leftArrow = document.getElementById("left-arrow")
 const rightArrow = document.getElementById("right-arrow")
+const dotButtons = document.querySelectorAll("#image-slider-button")
 
 leftArrow.addEventListener("click", leftCarrousel)
 rightArrow.addEventListener("click", rightCarrousel)
+dotButtons.forEach((button) => button.addEventListener("click", dotClick))
+
 
 function leftCarrousel() {
     const imgContainer = document.querySelector(".image-container")
@@ -59,7 +62,7 @@ function rightCarrousel() {
     const imgContainer = document.querySelector(".image-container")
     const style = getComputedStyle(imgContainer)
     if (style.right === "800px") {
-        imgContainer.style.right= "0px";
+        imgContainer.style.right = "0px";
         deactivateButton(document.querySelector(`button[name="800"]`))
         activateButton(document.querySelector(`button[name="0"]`))
     } else { 
@@ -67,7 +70,17 @@ function rightCarrousel() {
         deactivateButton(document.querySelector(`button[name="${value}"]`))
         value += 200
         activateButton(document.querySelector(`button[name="${value}"]`))
-        imgContainer.style.right= ` ${value}px`;
+        imgContainer.style.right = ` ${value}px`;
+    }
+}
+
+function dotClick(event) {
+    if (event.currentTarget.classList.contains("filter-active")) return
+    else {
+        deactivateButton(document.querySelector(`button[class="filter-active"]`))
+        activateButton(event.currentTarget)
+        const imgContainer = document.querySelector(".image-container")
+        imgContainer.style.right = ` ${event.currentTarget.name}px`
     }
 }
 
