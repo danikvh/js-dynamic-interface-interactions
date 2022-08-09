@@ -20,22 +20,25 @@ body {
     font-size: 20px;
 }
 
-.drop-down-main:hover, .drop-down-option:hover {
+.drop-down-main:hover, .drop-down-main:focus, .drop-down-option:hover {
     background-color: hsl(0, 61%, 51%);
 }
 
-.drop-down-main:active, .drop-down-option:active {
-    background-color: hsl(0, 61%, 41%);
+.drop-down-main-selected {
+    background-color: hsl(0, 61%, 51%);
 }
 
 .drop-down-options {
     display: flex;
     flex-direction: column;
     visibility: hidden;
-
 }
 
 .drop-down-option {
     font-size: 16px;
     height: 30px;
+}
+
+.show {
+    visibility: visible;
 }

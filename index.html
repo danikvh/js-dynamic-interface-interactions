@@ -13,16 +13,32 @@
     <h1>Drop-Down Menu</h1>
    <div class="nav-bar">
         <div class="drop-down">
-            <button class="drop-down-main">File</button>
-            <div class="drop-down-options">
-                <button class="drop-down-option" id="drop-down-option-1">Option 1</button>
+            <button onclick="showDropDown(this)" class="drop-down-main" option="1">File</button>
+            <div class="drop-down-options" id="drop-down-options-1">
+                <button class="drop-down-option">Option 1</button>
                 <button class="drop-down-option">Option 2</button>
                 <button class="drop-down-option">Option 3</button>
                 <button class="drop-down-option">Option 4</button>
             </div>
         </div>
-        <button class="drop-down-main">Edit</button>
-        <button class="drop-down-main">Selection</button>
+        <div class="drop-down">
+            <button onclick="showDropDown(this)" class="drop-down-main" option="2">Edit</button>
+            <div class="drop-down-options" id="drop-down-options-2">
+                <button class="drop-down-option">Option 1</button>
+                <button class="drop-down-option">Option 2</button>
+                <button class="drop-down-option">Option 3</button>
+                <button class="drop-down-option">Option 4</button>
+            </div>
+        </div>
+        <div class="drop-down">
+            <button onclick="showDropDown(this)" class="drop-down-main" option="3">Selection</button>
+            <div class="drop-down-options" id="drop-down-options-3">
+                <button class="drop-down-option">Option 1</button>
+                <button class="drop-down-option">Option 2</button>
+                <button class="drop-down-option">Option 3</button>
+                <button class="drop-down-option">Option 4</button>
+            </div>
+        </div>
    </div> 
 </body>
 </html>

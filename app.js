@@ -1,13 +1,19 @@
 //DROP DOWN MENU
-
-const dropDownButtons = document.querySelectorAll(".drop-down-main")
-
-
-dropDownButtons.forEach((button) => {
-    button.addEventListener("hover", showDropDown)
-})
-
-function showDropDown() {
-    const menu = document.getElementById("drop-down-option-1")
-    menu.style.visibility = visible
+function showDropDown(event) {
+    const option = event.getAttribute("option")
+    const menu = document.getElementById(`drop-down-options-${option}`)
+    menu.classList.toggle("show");
 }
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.drop-down-main')) {
+      const dropdowns = document.getElementsByClassName("drop-down-options");
+      for (let i = 0; i < dropdowns.length; i++) {
+        let openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
