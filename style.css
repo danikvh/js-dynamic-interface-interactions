@@ -3,6 +3,8 @@ body {
     padding: 0px;
 }
 
+/* DROP DOWN MENUS */
+
 .nav-bar {
     background-color: rgb(216, 95, 95);
     width: 100vw;
@@ -38,4 +40,19 @@ body {
 
 .drop-down-option-show {
     visibility: visible;
+}
+
+
+/* IMAGE SLIDER */
+
+.image-container {
+    display: flex;
+    width: 1000px;
+}
+
+.image-frame {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 10px solid black;
 }
