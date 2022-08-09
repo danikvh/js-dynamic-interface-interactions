@@ -112,6 +112,10 @@ h1 {
     justify-content: space-around;
 }
 
+.image-slider-buttons .filter-inactive:hover {
+    filter: contrast(20%);
+}
+
 .filter-active {
     filter: contrast(100%);
 }
