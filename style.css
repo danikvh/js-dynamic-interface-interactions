@@ -53,22 +53,19 @@ h1 {
     display: flex;
 }
 
-#left-arrow-slider-container {
+#left-arrow-slider-container, #right-arrow-slider-container {
+    background-color: white;
     flex: 1 1 auto;
     display: flex;
     align-items: center;
-    justify-self: flex-start;
     border: 10px solid black;
+}
+
+#left-arrow-slider-container {
+    justify-content: right;
 }
 
 #right-arrow-slider-container {
-    flex: 1 1 auto;
-    display: flex;
-    align-items: center;
-    border: 10px solid black;
-}
-
-#left-arrow {
 }
 
 .image-frame {

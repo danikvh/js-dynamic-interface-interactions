@@ -28,4 +28,39 @@ window.onclick = function(event) {
     if (!event.target.matches('.drop-down-main-selected')) {
         checkDropDownMenus()
     }
-  }
+}
+
+
+//IMAGE SLIDER
+
+const leftArrow = document.getElementById("left-arrow")
+const rightArrow = document.getElementById("right-arrow")
+
+leftArrow.addEventListener("click", leftCarrousel)
+
+function leftCarrousel() {
+    const imgContainer = document.querySelector(".image-container")
+    const style = getComputedStyle(imgContainer)
+    if (style.right === "0px") {
+        imgContainer.style.right= "800px";
+        deactivateButton(document.querySelector(`button[name="0"]`))
+        activateButton(document.querySelector(`button[name="800"]`))
+    } else { 
+        let value = style.right.match(/(\d+)/)
+        deactivateButton(document.querySelector(`button[name="${value[0]}"]`))
+        value[0] -= 200
+        activateButton(document.querySelector(`button[name="${value[0]}"]`))
+        imgContainer.style.right= ` ${value[0]}px`;
+    }
+}
+
+function activateButton(button) {
+    button.classList.remove("filter-inactive")
+    button.classList.add("filter-active")    
+
+}
+
+function deactivateButton(button) {
+    button.classList.remove("filter-active")
+    button.classList.add("filter-inactive")
+}
