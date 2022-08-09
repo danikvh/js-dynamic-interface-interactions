@@ -1,0 +1,41 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-bar {
+    background-color: rgb(216, 95, 95);
+    width: 100vw;
+    height: 60px;
+    display: flex;
+}
+
+.drop-down-main, .drop-down-option {
+    border: transparent;
+    margin: 0px 10px;
+    width: 100px;
+    height: 100%;
+    background-color: rgb(216, 95, 95);
+    color: white;
+    font-size: 20px;
+}
+
+.drop-down-main:hover, .drop-down-option:hover {
+    background-color: hsl(0, 61%, 51%);
+}
+
+.drop-down-main:active, .drop-down-option:active {
+    background-color: hsl(0, 61%, 41%);
+}
+
+.drop-down-options {
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+
+}
+
+.drop-down-option {
+    font-size: 16px;
+    height: 30px;
+}
