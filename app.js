@@ -6,6 +6,8 @@ function showDropDown(event) {
     const option = event.getAttribute("option")
     const menu = document.getElementById(`drop-down-options-${option}`)
     menu.classList.add("drop-down-option-show");
+    const options = document.querySelectorAll(`#drop-down-options-${option} > .drop-down-option`)
+    options.forEach((option) => option.classList.add("drop-down-animation"))
 }
 
 function checkDropDownMenus() {
@@ -22,6 +24,9 @@ function checkDropDownMenus() {
             menu.classList.remove("drop-down-option-show")
         }
     })
+
+    const options = document.querySelectorAll(".drop-down-option")
+    options.forEach((option) => option.classList.remove("drop-down-animation"))
 }
 
 window.onclick = function(event) {
