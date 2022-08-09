@@ -51,6 +51,22 @@ h1 {
 
 .image-slider {
     display: flex;
+    border: 1px solid black;
+}
+
+#left-arrow-slider {
+
+}
+
+#right-arrow-slider {
+
+}
+
+.image-frame {
+    margin-left: 100px;
+    width: 200px;
+    height: 200px;
+    border: 10px solid black;
 }
 
 .image-container {
@@ -59,17 +75,4 @@ h1 {
     position: relative;
     right: 200px;
     z-index: -1;
-}
-
-.image-container img {
-    z-index: -1;
-}
-
-.image-frame {
-    margin-left: 100px;
-    width: 200px;
-    height: 200px;
-    background-color: white;
-    border: 10px solid black;
-    z-index: 1;
 }
