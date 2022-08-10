@@ -48,6 +48,8 @@ leftArrow.addEventListener("click", leftCarrousel)
 rightArrow.addEventListener("click", rightCarrousel)
 dotButtons.forEach((button) => button.addEventListener("click", dotClick))
 
+let timeout = null;
+carrouselTimeout()
 
 function leftCarrousel() {
     const imgContainer = document.querySelector(".image-container")
@@ -66,6 +68,8 @@ function leftCarrousel() {
         imgContainer.style.right= ` ${value}px`;
         imgContainer.classList.add("image-container-animation")
     }
+    clearTimeout(timeout)
+    carrouselTimeout()
 }
 
 function rightCarrousel() {
@@ -85,6 +89,8 @@ function rightCarrousel() {
         imgContainer.style.right = ` ${value}px`
         imgContainer.classList.add("image-container-animation")
     }
+    clearTimeout(timeout)
+    carrouselTimeout()
 }
 
 function dotClick(event) {
@@ -97,6 +103,8 @@ function dotClick(event) {
         imgContainer.style.right = ` ${event.currentTarget.name}px`
         imgContainer.classList.add("image-container-animation")
     }
+    clearTimeout(timeout)
+    carrouselTimeout()
 }
 
 function activateButton(button) {
@@ -107,4 +115,11 @@ function activateButton(button) {
 function deactivateButton(button) {
     button.classList.remove("filter-active")
     button.classList.add("filter-inactive")
+}
+
+function carrouselTimeout() {
+    timeout = setTimeout(function () {
+        rightCarrousel()
+        carrouselTimeout()
+    }, 5000)
 }
