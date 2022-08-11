@@ -98,6 +98,10 @@ function dotClick(event) {
     imgContainer.classList.remove("image-container-animation")
     if (event.currentTarget.classList.contains("filter-active")) return
     else {
+        // Needed to make the change, gives time for the remove to take effect???
+        const style = getComputedStyle(imgContainer)
+        let value = parseInt(style.right.match(/(\d+)/)[0])
+        //
         deactivateButton(document.querySelector(`button[class="filter-active"]`))
         activateButton(event.currentTarget)
         imgContainer.style.right = ` ${event.currentTarget.name}px`
